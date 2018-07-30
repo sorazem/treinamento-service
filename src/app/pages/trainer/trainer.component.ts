@@ -13,6 +13,8 @@ export class TrainerComponent implements OnInit {
   constructor(public trainerService: TrainerService) { }
 
   ngOnInit() {
+    document.body.style.backgroundImage = "url('assets/bg2.jpg')";
+    document.body.style.backgroundSize = "cover";
   }
 
   onSubmit(cadastro) {
