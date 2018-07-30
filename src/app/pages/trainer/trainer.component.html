@@ -1,0 +1,39 @@
+<div class="row white">
+	<form #cadastro="ngForm" (ngSubmit)="onSubmit(cadastro)" class="col l12">
+		<div class="row">
+			<div class="row">
+				<div class="input-field col l6 offset-l1">
+					<input id="nome" type="text" name="nome" ngModel required #nome="ngModel">
+					<label for="nome">Nome</label>
+				</div>
+				<div class="input-field col l4" *ngIf="nome.invalid && nome.touched">
+					<p><span>Campo obrigatório.</span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col l6 offset-l1">
+					<input id="codigo" type="text" name="codigo" ngModel required #codigo="ngModel" (blur)="checkCodigo(codigo)">
+					<label for="codigo">Código</label>
+				</div>
+				<div class="input-field col l4" *ngIf="codigo.invalid && codigo.touched">
+					<p><span>Campo obrigatório.</span></p>
+				</div>
+				<div class="input-field col l4" *ngIf="codigo.valid && codigo.touched && codigoError">
+					<p><span>O código deve ter 8 dígitos.</span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col l6 offset-l1">
+					<input id="pokemon" type="text" name="pokemon" ngModel required #pokemon="ngModel">
+					<label for="pokemon">Pokémon</label>
+				</div>
+				<div class="input-field col l4" *ngIf="pokemon.invalid && pokemon.touched">
+					<p><span>Não esqueça seu pokémon!</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="row center">
+			<button class="waves-effect waves-light btn" type="submit" [disabled]="nome.invalid || codigo.invalid || codigoError || pokemon.invalid">CADASTRO</button>
+		</div>
+	</form>
+</div>

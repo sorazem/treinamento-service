@@ -1,0 +1,18 @@
+h1 {
+	font-family: 'Russo One', sans-serif;
+	margin-top: 10vh;
+}
+
+p { 
+	font-family: 'Monda', sans-serif;
+	font-size: 1.4em;
+}
+
+h3 {
+	font-family: 'Monda', sans-serif;
+	font-size: 1.9em;
+}
+
+.collection-item > .row > .tbl {
+	padding: 20px;
+}
